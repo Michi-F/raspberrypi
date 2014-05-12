@@ -1,0 +1,7 @@
+AuthUserFile /home/tempwww/htdocs/.htpasswd
+AuthName "Nothing to see here, go away."
+AuthType Basic
+
+<limit GET POST>
+require valid-user
+</limit>
