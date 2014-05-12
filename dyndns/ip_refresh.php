@@ -1,6 +1,6 @@
 <?php
 /*******************************************************************************************
-*    Copyright © 2012-2013 Michael Felger                                                  *
+*    Copyright © 2012-2014 Michael Felger                                                  *
 *                                                                                          *
 *    This program is free software: you can redistribute it and/or modify                  *
 *    it under the terms of the GNU General Public License Version 3 as published by        *
