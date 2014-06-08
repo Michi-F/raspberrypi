@@ -78,8 +78,8 @@ public class host
 	private host()
 	{
 		this.gpio = GpioFactory.getInstance();
-		this.pinPower = this.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "Power PC Pin", PinState.LOW);
-		this.pinReset = this.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "Power PC Pin", PinState.LOW);
+		this.pinPower = this.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PC Power Pin", PinState.LOW);
+		this.pinReset = this.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "PC Reset Pin", PinState.LOW);
 
 		try
 		{
@@ -263,6 +263,9 @@ public class host
 			OutputStream outputStream = this.hostThreadSocket.getOutputStream();
 			PrintStream printStream = new PrintStream(outputStream);
 			printStream.print(m);
+
+			host.this.log.log(Level.INFO, "Send Message: '" + m + "' to " + this.hostThreadSocket.getInetAddress() +
+					":" + this.hostThreadSocket.getPort());
 		}
 
 		private void pcPowerOn()
